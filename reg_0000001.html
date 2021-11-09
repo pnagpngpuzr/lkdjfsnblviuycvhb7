@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+     
+    </script>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Aplicación para conocer las condiciones de la población con respecto a COVID-19"
+    />
+    <link rel="apple-touch-icon" href="logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.google-analytics.com/analytics.js"
+    ></script>
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=UA-122227170-4"
+    ></script>
+    <script>
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      (window.dataLayer = window.dataLayer || []),
+        gtag("js", new Date()),
+        gtag("config", "UA-122227170-4");
+    </script>
+    <title>COVID-19</title>
+    <style data-jss="" data-meta="MuiGrid">
+      .MuiGrid-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+      }
+      .MuiGrid-item {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .MuiGrid-zeroMinWidth {
+        min-width: 0;
+      }
+      .MuiGrid-direction-xs-column {
+        flex-direction: column;
+      }
+      .MuiGrid-direction-xs-column-reverse {
+        flex-direction: column-reverse;
+      }
+      .MuiGrid-direction-xs-row-reverse {
+        flex-direction: row-reverse;
+      }
+      .MuiGrid-wrap-xs-nowrap {
+        flex-wrap: nowrap;
+      }
+      .MuiGrid-wrap-xs-wrap-reverse {
+        flex-wrap: wrap-reverse;
+      }
+      .MuiGrid-align-items-xs-center {
+        align-items: center;
+      }
+      .MuiGrid-align-items-xs-flex-start {
+        align-items: flex-start;
+      }
+      .MuiGrid-align-items-xs-flex-end {
+        align-items: flex-end;
+      }
+      .MuiGrid-align-items-xs-baseline {
+        align-items: baseline;
+      }
+      .MuiGrid-align-content-xs-center {
+        align-content: center;
+      }
+      .MuiGrid-align-content-xs-flex-start {
+        align-content: flex-start;
+      }
+      .MuiGrid-align-content-xs-flex-end {
+        align-content: flex-end;
+      }
+      .MuiGrid-align-content-xs-space-between {
+        align-content: space-between;
+      }
+      .MuiGrid-align-content-xs-space-around {
+        align-content: space-around;
+      }
+      .MuiGrid-justify-xs-center {
+        justify-content: center;
+      }
+      .MuiGrid-justify-xs-flex-end {
+        justify-content: flex-end;
+      }
+      .MuiGrid-justify-xs-space-between {
+        justify-content: space-between;
+      }
+      .MuiGrid-justify-xs-space-around {
+        justify-content: space-around;
+      }
+      .MuiGrid-justify-xs-space-evenly {
+        justify-content: space-evenly;
+      }
+      .MuiGrid-spacing-xs-1 {
+        width: calc(100% + 8px);
+        margin: -4px;
+      }
+      .MuiGrid-spacing-xs-1 > .MuiGrid-item {
+        padding: 4px;
+      }
+      .MuiGrid-spacing-xs-2 {
+        width: calc(100% + 16px);
+        margin: -8px;
+      }
+      .MuiGrid-spacing-xs-2 > .MuiGrid-item {
+        padding: 8px;
+      }
+      .MuiGrid-spacing-xs-3 {
+        width: calc(100% + 24px);
+        margin: -12px;
+      }
+      .MuiGrid-spacing-xs-3 > .MuiGrid-item {
+        padding: 12px;
+      }
+      .MuiGrid-spacing-xs-4 {
+        width: calc(100% + 32px);
+        margin: -16px;
+      }
+      .MuiGrid-spacing-xs-4 > .MuiGrid-item {
+        padding: 16px;
+      }
+      .MuiGrid-spacing-xs-5 {
+        width: calc(100% + 40px);
+        margin: -20px;
+      }
+      .MuiGrid-spacing-xs-5 > .MuiGrid-item {
+        padding: 20px;
+      }
+      .MuiGrid-spacing-xs-6 {
+        width: calc(100% + 48px);
+        margin: -24px;
+      }
+      .MuiGrid-spacing-xs-6 > .MuiGrid-item {
+        padding: 24px;
+      }
+      .MuiGrid-spacing-xs-7 {
+        width: calc(100% + 56px);
+        margin: -28px;
+      }
+      .MuiGrid-spacing-xs-7 > .MuiGrid-item {
+        padding: 28px;
+      }
+      .MuiGrid-spacing-xs-8 {
+        width: calc(100% + 64px);
+        margin: -32px;
+      }
+      .MuiGrid-spacing-xs-8 > .MuiGrid-item {
+        padding: 32px;
+      }
+      .MuiGrid-spacing-xs-9 {
+        width: calc(100% + 72px);
+        margin: -36px;
+      }
+      .MuiGrid-spacing-xs-9 > .MuiGrid-item {
+        padding: 36px;
+      }
+      .MuiGrid-spacing-xs-10 {
+        width: calc(100% + 80px);
+        margin: -40px;
+      }
+      .MuiGrid-spacing-xs-10 > .MuiGrid-item {
+        padding: 40px;
+      }
+      .MuiGrid-grid-xs-auto {
+        flex-grow: 0;
+        max-width: none;
+        flex-basis: auto;
+      }
+      .MuiGrid-grid-xs-true {
+        flex-grow: 1;
+        max-width: 100%;
+        flex-basis: 0;
+      }
+      .MuiGrid-grid-xs-1 {
+        flex-grow: 0;
+        max-width: 8.333333%;
+        flex-basis: 8.333333%;
+      }
+      .MuiGrid-grid-xs-2 {
+        flex-grow: 0;
+        max-width: 16.666667%;
+        flex-basis: 16.666667%;
+      }
+      .MuiGrid-grid-xs-3 {
+        flex-grow: 0;
+        max-width: 25%;
+        flex-basis: 25%;
+      }
+      .MuiGrid-grid-xs-4 {
+        flex-grow: 0;
+        max-width: 33.333333%;
+        flex-basis: 33.333333%;
+      }
+      .MuiGrid-grid-xs-5 {
+        flex-grow: 0;
+        max-width: 41.666667%;
+        flex-basis: 41.666667%;
+      }
+      .MuiGrid-grid-xs-6 {
+        flex-grow: 0;
+        max-width: 50%;
+        flex-basis: 50%;
+      }
+      .MuiGrid-grid-xs-7 {
+        flex-grow: 0;
+        max-width: 58.333333%;
+        flex-basis: 58.333333%;
+      }
+      .MuiGrid-grid-xs-8 {
+        flex-grow: 0;
+        max-width: 66.666667%;
+        flex-basis: 66.666667%;
+      }
+      .MuiGrid-grid-xs-9 {
+        flex-grow: 0;
+        max-width: 75%;
+        flex-basis: 75%;
+      }
+      .MuiGrid-grid-xs-10 {
+        flex-grow: 0;
+        max-width: 83.333333%;
+        flex-basis: 83.333333%;
+      }
+      .MuiGrid-grid-xs-11 {
+        flex-grow: 0;
+        max-width: 91.666667%;
+        flex-basis: 91.666667%;
+      }
+      .MuiGrid-grid-xs-12 {
+        flex-grow: 0;
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+      @media (min-width: 600px) {
+        .MuiGrid-grid-sm-auto {
+          flex-grow: 0;
+          max-width: none;
+          flex-basis: auto;
+        }
+        .MuiGrid-grid-sm-true {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+        .MuiGrid-grid-sm-1 {
+          flex-grow: 0;
+          max-width: 8.333333%;
+          flex-basis: 8.333333%;
+        }
+        .MuiGrid-grid-sm-2 {
+          flex-grow: 0;
+          max-width: 16.666667%;
+          flex-basis: 16.666667%;
+        }
+        .MuiGrid-grid-sm-3 {
+          flex-grow: 0;
+          max-width: 25%;
+          flex-basis: 25%;
+        }
+        .MuiGrid-grid-sm-4 {
+          flex-grow: 0;
+          max-width: 33.333333%;
+          flex-basis: 33.333333%;
+        }
+        .MuiGrid-grid-sm-5 {
+          flex-grow: 0;
+          max-width: 41.666667%;
+          flex-basis: 41.666667%;
+        }
+        .MuiGrid-grid-sm-6 {
+          flex-grow: 0;
+          max-width: 50%;
+          flex-basis: 50%;
+        }
+        .MuiGrid-grid-sm-7 {
+          flex-grow: 0;
+          max-width: 58.333333%;
+          flex-basis: 58.333333%;
+        }
+        .MuiGrid-grid-sm-8 {
+          flex-grow: 0;
+          max-width: 66.666667%;
+          flex-basis: 66.666667%;
+        }
+        .MuiGrid-grid-sm-9 {
+          flex-grow: 0;
+          max-width: 75%;
+          flex-basis: 75%;
+        }
+        .MuiGrid-grid-sm-10 {
+          flex-grow: 0;
+          max-width: 83.333333%;
+          flex-basis: 83.333333%;
+        }
+        .MuiGrid-grid-sm-11 {
+          flex-grow: 0;
+          max-width: 91.666667%;
+          flex-basis: 91.666667%;
+        }
+        .MuiGrid-grid-sm-12 {
+          flex-grow: 0;
+          max-width: 100%;
+          flex-basis: 100%;
+        }
+      }
+      @media (min-width: 960px) {
+        .MuiGrid-grid-md-auto {
+          flex-grow: 0;
+          max-width: none;
+          flex-basis: auto;
+        }
+        .MuiGrid-grid-md-true {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+        .MuiGrid-grid-md-1 {
+          flex-grow: 0;
+          max-width: 8.333333%;
+          flex-basis: 8.333333%;
+        }
+        .MuiGrid-grid-md-2 {
+          flex-grow: 0;
+          max-width: 16.666667%;
+          flex-basis: 16.666667%;
+        }
+        .MuiGrid-grid-md-3 {
+          flex-grow: 0;
+          max-width: 25%;
+          flex-basis: 25%;
+        }
+        .MuiGrid-grid-md-4 {
+          flex-grow: 0;
+          max-width: 33.333333%;
+          flex-basis: 33.333333%;
+        }
+        .MuiGrid-grid-md-5 {
+          flex-grow: 0;
+          max-width: 41.666667%;
+          flex-basis: 41.666667%;
+        }
+        .MuiGrid-grid-md-6 {
+          flex-grow: 0;
+          max-width: 50%;
+          flex-basis: 50%;
+        }
+        .MuiGrid-grid-md-7 {
+          flex-grow: 0;
+          max-width: 58.333333%;
+          flex-basis: 58.333333%;
+        }
+        .MuiGrid-grid-md-8 {
+          flex-grow: 0;
+          max-width: 66.666667%;
+          flex-basis: 66.666667%;
+        }
+        .MuiGrid-grid-md-9 {
+          flex-grow: 0;
+          max-width: 75%;
+          flex-basis: 75%;
+        }
+        .MuiGrid-grid-md-10 {
+          flex-grow: 0;
+          max-width: 83.333333%;
+          flex-basis: 83.333333%;
+        }
+        .MuiGrid-grid-md-11 {
+          flex-grow: 0;
+          max-width: 91.666667%;
+          flex-basis: 91.666667%;
+        }
+        .MuiGrid-grid-md-12 {
+          flex-grow: 0;
+          max-width: 100%;
+          flex-basis: 100%;
+        }
+      }
+      @media (min-width: 1280px) {
+        .MuiGrid-grid-lg-auto {
+          flex-grow: 0;
+          max-width: none;
+          flex-basis: auto;
+        }
+        .MuiGrid-grid-lg-true {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+        .MuiGrid-grid-lg-1 {
+          flex-grow: 0;
+          max-width: 8.333333%;
+          flex-basis: 8.333333%;
+        }
+        .MuiGrid-grid-lg-2 {
+          flex-grow: 0;
+          max-width: 16.666667%;
+          flex-basis: 16.666667%;
+        }
+        .MuiGrid-grid-lg-3 {
+          flex-grow: 0;
+          max-width: 25%;
+          flex-basis: 25%;
+        }
+        .MuiGrid-grid-lg-4 {
+          flex-grow: 0;
+          max-width: 33.333333%;
+          flex-basis: 33.333333%;
+        }
+        .MuiGrid-grid-lg-5 {
+          flex-grow: 0;
+          max-width: 41.666667%;
+          flex-basis: 41.666667%;
+        }
+        .MuiGrid-grid-lg-6 {
+          flex-grow: 0;
+          max-width: 50%;
+          flex-basis: 50%;
+        }
+        .MuiGrid-grid-lg-7 {
+          flex-grow: 0;
+          max-width: 58.333333%;
+          flex-basis: 58.333333%;
+        }
+        .MuiGrid-grid-lg-8 {
+          flex-grow: 0;
+          max-width: 66.666667%;
+          flex-basis: 66.666667%;
+        }
+        .MuiGrid-grid-lg-9 {
+          flex-grow: 0;
+          max-width: 75%;
+          flex-basis: 75%;
+        }
+        .MuiGrid-grid-lg-10 {
+          flex-grow: 0;
+          max-width: 83.333333%;
+          flex-basis: 83.333333%;
+        }
+        .MuiGrid-grid-lg-11 {
+          flex-grow: 0;
+          max-width: 91.666667%;
+          flex-basis: 91.666667%;
+        }
+        .MuiGrid-grid-lg-12 {
+          flex-grow: 0;
+          max-width: 100%;
+          flex-basis: 100%;
+        }
+      }
+      @media (min-width: 1920px) {
+        .MuiGrid-grid-xl-auto {
+          flex-grow: 0;
+          max-width: none;
+          flex-basis: auto;
+        }
+        .MuiGrid-grid-xl-true {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+        .MuiGrid-grid-xl-1 {
+          flex-grow: 0;
+          max-width: 8.333333%;
+          flex-basis: 8.333333%;
+        }
+        .MuiGrid-grid-xl-2 {
+          flex-grow: 0;
+          max-width: 16.666667%;
+          flex-basis: 16.666667%;
+        }
+        .MuiGrid-grid-xl-3 {
+          flex-grow: 0;
+          max-width: 25%;
+          flex-basis: 25%;
+        }
+        .MuiGrid-grid-xl-4 {
+          flex-grow: 0;
+          max-width: 33.333333%;
+          flex-basis: 33.333333%;
+        }
+        .MuiGrid-grid-xl-5 {
+          flex-grow: 0;
+          max-width: 41.666667%;
+          flex-basis: 41.666667%;
+        }
+        .MuiGrid-grid-xl-6 {
+          flex-grow: 0;
+          max-width: 50%;
+          flex-basis: 50%;
+        }
+        .MuiGrid-grid-xl-7 {
+          flex-grow: 0;
+          max-width: 58.333333%;
+          flex-basis: 58.333333%;
+        }
+        .MuiGrid-grid-xl-8 {
+          flex-grow: 0;
+          max-width: 66.666667%;
+          flex-basis: 66.666667%;
+        }
+        .MuiGrid-grid-xl-9 {
+          flex-grow: 0;
+          max-width: 75%;
+          flex-basis: 75%;
+        }
+        .MuiGrid-grid-xl-10 {
+          flex-grow: 0;
+          max-width: 83.333333%;
+          flex-basis: 83.333333%;
+        }
+        .MuiGrid-grid-xl-11 {
+          flex-grow: 0;
+          max-width: 91.666667%;
+          flex-basis: 91.666667%;
+        }
+        .MuiGrid-grid-xl-12 {
+          flex-grow: 0;
+          max-width: 100%;
+          flex-basis: 100%;
+        }
+      }
+    </style>
+    <style data-jss="" data-meta="MuiCssBaseline">
+      html {
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+      strong,
+      b {
+        font-weight: 700;
+      }
+      body {
+        color: rgba(0, 0, 0, 0.87);
+        margin: 0;
+        font-size: 0.875rem;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif, "IBM Plex Sans";
+        font-weight: 400;
+        line-height: 1.43;
+        background-color: #f7f7f7;
+      }
+      @media print {
+        body {
+          background-color: #fff;
+        }
+      }
+      body::backdrop {
+        background-color: #f7f7f7;
+      }
+    </style>
+    <style data-jss="" data-meta="MuiSnackbar">
+      .MuiSnackbar-root {
+        left: 8px;
+        right: 8px;
+        display: flex;
+        z-index: 1400;
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+      }
+      .MuiSnackbar-anchorOriginTopCenter {
+        top: 8px;
+      }
+      @media (min-width: 600px) {
+        .MuiSnackbar-anchorOriginTopCenter {
+          top: 24px;
+          left: 50%;
+          right: auto;
+          transform: translateX(-50%);
+        }
+      }
+      .MuiSnackbar-anchorOriginBottomCenter {
+        bottom: 8px;
+      }
+      @media (min-width: 600px) {
+        .MuiSnackbar-anchorOriginBottomCenter {
+          left: 50%;
+          right: auto;
+          bottom: 24px;
+          transform: translateX(-50%);
+        }
+      }
+      .MuiSnackbar-anchorOriginTopRight {
+        top: 8px;
+        justify-content: flex-end;
+      }
+      @media (min-width: 600px) {
+        .MuiSnackbar-anchorOriginTopRight {
+          top: 24px;
+          left: auto;
+          right: 24px;
+        }
+      }
+      .MuiSnackbar-anchorOriginBottomRight {
+        bottom: 8px;
+        justify-content: flex-end;
+      }
+      @media (min-width: 600px) {
+        .MuiSnackbar-anchorOriginBottomRight {
+          left: auto;
+          right: 24px;
+          bottom: 24px;
+        }
+      }
+      .MuiSnackbar-anchorOriginTopLeft {
+        top: 8px;
+        justify-content: flex-start;
+      }
+      @media (min-width: 600px) {
+        .MuiSnackbar-anchorOriginTopLeft {
+          top: 24px;
+          left: 24px;
+          right: auto;
+        }
+      }
+      .MuiSnackbar-anchorOriginBottomLeft {
+        bottom: 8px;
+        justify-content: flex-start;
+      }
+      @media (min-width: 600px) {
+        .MuiSnackbar-anchorOriginBottomLeft {
+          left: 24px;
+          right: auto;
+          bottom: 24px;
+        }
+      }
+    </style>
+    <style data-jss="" data-meta="MuiTypography">
+      .MuiTypography-root {
+        margin: 0;
+      }
+      .MuiTypography-body2 {
+        font-size: 0.875rem;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif, "IBM Plex Sans";
+        font-weight: 400;
+        line-height: 1.43;
+      }
+      .MuiTypography-body1 {
+        font-size: 1rem;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif, "IBM Plex Sans";
+        font-weight: 400;
+        line-height: 1.5;
+      }
+      .MuiTypography-caption {
+        font-size: 0.75rem;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif, "IBM Plex Sans";
+        font-weight: 400;
+        line-height: 1.66;
+      }
+      .MuiTypography-button {
+        font-size: 0.875rem;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif, "IBM Plex Sans";
+        font-weight: 600;
+        line-height: 1.75;
+        text-transform: uppercase;
+      }
+      .MuiTypography-h1 {
+        font-size: 6rem;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif, "IBM Plex Sans";
+        font-weight: 300;
+        line-height: 1.167;
+      }
+      .MuiTypography-h2 {
+        font-size: 3.75rem;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif, "IBM Plex Sans";
+        font-weight: 300;
+        line-height: 1.2;
+      }
+      .MuiTypography-h3 {
+        font-size: 3rem;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif, "IBM Plex Sans";
+        font-weight: 400;
+        line-height: 1.167;
+      }
+      .MuiTypography-h4 {
+        font-size: 2.125rem;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif, "IBM Plex Sans";
+        font-weight: 400;
+        line-height: 1.235;
+      }
+      .MuiTypography-h5 {
+        font-size: 1.5rem;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif, "IBM Plex Sans";
+        font-weight: 400;
+        line-height: 1.334;
+      }
+      .MuiTypography-h6 {
+        font-size: 1.25rem;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif, "IBM Plex Sans";
+        font-weight: 600;
+        line-height: 1.6;
+      }
+      .MuiTypography-subtitle1 {
+        font-size: 1rem;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif, "IBM Plex Sans";
+        font-weight: 400;
+        line-height: 1.75;
+      }
+      .MuiTypography-subtitle2 {
+        font-size: 0.875rem;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif, "IBM Plex Sans";
+        font-weight: 600;
+        line-height: 1.57;
+      }
+      .MuiTypography-overline {
+        font-size: 0.75rem;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif, "IBM Plex Sans";
+        font-weight: 400;
+        line-height: 2.66;
+        text-transform: uppercase;
+      }
+      .MuiTypography-srOnly {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+      }
+      .MuiTypography-alignLeft {
+        text-align: left;
+      }
+      .MuiTypography-alignCenter {
+        text-align: center;
+      }
+      .MuiTypography-alignRight {
+        text-align: right;
+      }
+      .MuiTypography-alignJustify {
+        text-align: justify;
+      }
+      .MuiTypography-noWrap {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .MuiTypography-gutterBottom {
+        margin-bottom: 0.35em;
+      }
+      .MuiTypography-paragraph {
+        margin-bottom: 16px;
+      }
+      .MuiTypography-colorInherit {
+        color: inherit;
+      }
+      .MuiTypography-colorPrimary {
+        color: #065799;
+      }
+      .MuiTypography-colorSecondary {
+        color: #199ea0;
+      }
+      .MuiTypography-colorTextPrimary {
+        color: rgba(0, 0, 0, 0.87);
+      }
+      .MuiTypography-colorTextSecondary {
+        color: rgba(0, 0, 0, 0.54);
+      }
+      .MuiTypography-colorError {
+        color: #e2322a;
+      }
+      .MuiTypography-displayInline {
+        display: inline;
+      }
+      .MuiTypography-displayBlock {
+        display: block;
+      }
+    </style>
+    <style data-jss="" data-meta="makeStyles">
+      .jss10 {
+        height: 70px;
+        margin: 20px 40px 0px 40px;
+        position: sticky;
+        border-bottom: 2px solid #ff9430;
+      }
+      @media (max-width: 959.95px) {
+        .jss10 {
+          height: 50px;
+          margin: 15px 30px 0px 30px;
+        }
+      }
+      .jss11 {
+        left: 0;
+        width: 201px;
+        height: 55px;
+        position: absolute;
+      }
+      @media (max-width: 959.95px) {
+        .jss11 {
+          width: 145px;
+          height: 40px;
+        }
+      }
+      .jss12 {
+        right: 0;
+        width: 130px;
+        height: 60px;
+        position: absolute;
+      }
+      @media (max-width: 959.95px) {
+        .jss12 {
+          width: 103px;
+          height: 47px;
+        }
+      }
+    </style>
+    <style data-jss="" data-meta="makeStyles">
+      .jss15 {
+        display: flex;
+        justify-content: center;
+      }
+      .jss16 {
+        width: 179px;
+        bottom: 0;
+        height: 26px;
+        position: fixed;
+        margin-right: 35px;
+        margin-bottom: 20px;
+      }
+      @media (max-width: 959.95px) {
+        .jss16 {
+          left: 0;
+          right: 0;
+          width: 145px;
+          bottom: 0;
+          height: 21px;
+          margin: auto;
+          position: initial;
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+    <style data-jss="" data-meta="makeStyles">
+      .jss13 {
+        color: #065799;
+        cursor: pointer;
+        height: 25px;
+        z-index: 1000;
+        font-size: 16px;
+        margin-top: 35px;
+        font-weight: 500;
+        margin-left: 45px;
+        text-decoration: none;
+      }
+      @media (max-width: 959.95px) {
+        .jss13 {
+          margin-top: 25px;
+          margin-left: 30px;
+        }
+      }
+      .jss14 {
+        width: 16px;
+        height: 14px;
+        transform: rotate(180deg);
+        margin-right: 10px;
+        margin-bottom: -2px;
+      }
+    </style>
+    <style data-jss="" data-meta="makeStyles">
+      body {
+        height: 100%;
+        background-color: #f2f7fb;
+      }
+      .jss2 {
+        height: 100%;
+        background-color: #f2f7fb;
+      }
+      .jss3 {
+        width: 55%;
+        margin: auto;
+      }
+      @media (max-width: 959.95px) {
+        .jss3 {
+          width: 100%;
+          margin: 0;
+          padding-left: 20px;
+          margin-bottom: 15px;
+          padding-right: 20px;
+        }
+      }
+      .jss4 {
+        margin-top: 25px;
+        margin-bottom: 25px;
+      }
+      .jss5 {
+        color: #042b41;
+        font-size: 30px;
+        font-weight: bold;
+        margin-left: 10px;
+      }
+      @media (max-width: 959.95px) {
+        .jss5 {
+          font-size: 15px;
+        }
+      }
+      .jss6 {
+        width: 42px;
+        height: 42px;
+      }
+      @media (max-width: 959.95px) {
+        .jss6 {
+          width: 32px;
+          height: 32px;
+        }
+      }
+      .jss7 {
+        margin-top: 35px;
+        margin-left: -45px;
+      }
+      @media (max-width: 959.95px) {
+        .jss7 {
+          margin-left: -20px;
+        }
+      }
+      .jss8 {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        position: absolute;
+      }
+      .jss9 {
+        width: 100%;
+        display: grid;
+        padding-top: 20px;
+        border-radius: 20px;
+        padding-bottom: 20px;
+        justify-content: center;
+        background-color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div>
+        <div class="jss2">
+          <div class="jss10">
+            <img alt="" src="icons/portal.svg" class="jss11" /><img
+              alt=""
+              src="icons/logo.svg"
+              class="jss12"
+            />
+          </div>
+          <div
+            class="
+              MuiGrid-root
+              jss3
+              MuiGrid-container
+              MuiGrid-direction-xs-column
+              MuiGrid-justify-xs-center
+            "
+          >
+            <div class="MuiGrid-root jss7">
+              <a class="jss13" href="https://vacunas.ministeriodesalud.go.cr/"
+                ><img src="icons/submitArrow.svg" alt="" class="jss14" /> Volver
+                a consulta</a
+              >
+            </div>
+            <div
+              class="
+                MuiGrid-root
+                jss4
+                MuiGrid-container MuiGrid-align-items-xs-center
+              "
+            >
+              <img alt="certificado" src="icons/vaccineLogo.svg" />
+              <p class="MuiTypography-root jss5 MuiTypography-body1">
+                Estado de vacunación #
+              </p>
+            </div>
+            <div
+              class="
+                MuiGrid-root
+                jss9
+                MuiGrid-container
+                MuiGrid-direction-xs-column
+                MuiGrid-align-items-xs-center
+                MuiGrid-justify-xs-center
+              "
+            >
+              <div
+                style="padding: 20px; background-color: #ffffff; width: 100%"
+              >
+                <style>
+                  .title {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #065799;
+                  }
+
+                  .text {
+                    font-size: 12px;
+                    margin: 8px 0px 0px 0px;
+                    font: "IBM Plex Sans";
+                    font-weight: 400;
+                    color: "4F4F4F";
+                  }
+
+                  .header {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    border-bottom: 1px solid #b0cce1;
+                    justify-content: space-between;
+                  }
+
+                  .qr-div {
+                    padding: 20px 30px;
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    width: 55%;
+                  }
+
+                  .body-div {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                  }
+
+                  .pi-div {
+                    background: #f2f7fb;
+                    border-radius: 21px;
+                    padding: 10px 25px;
+                    display: flex;
+                    flex-direction: column;
+                    width: 55%;
+                  }
+
+                  .pi-image {
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 10px;
+                    position: initial;
+                  }
+
+                  .primary-data {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    width: 100%;
+                    align-self: center;
+                  }
+
+                  .complete {
+                    font-size: 20px;
+                    line-height: 26px;
+                    font-weight: bold;
+                    margin: 0px;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    color: #219653;
+                  }
+
+                  .incomplete {
+                    font-size: 20px;
+                    line-height: 26px;
+                    font-weight: bold;
+                    margin: 0px;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    color: #eb5757;
+                  }
+
+                  @media screen and (max-width: 600px) {
+                    .title {
+                      width: 100%;
+                    }
+
+                    .header {
+                      flex-direction: column;
+                      align-items: center;
+                    }
+
+                    .pi-div {
+                      width: 100%;
+                    }
+
+                    .header {
+                      flex-direction: column-reverse;
+                    }
+
+                    .primary-data {
+                      flex-direction: column-reverse;
+                    }
+
+                    .qr-div {
+                      width: 100%;
+                    }
+                  }
+                </style>
+                <div class="header">
+                  <p class="title">
+                    COVID-19 Vaccination status / Estado de vacunación
+                  </p>
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: row;
+                      align-items: center;
+                      justify-content: flex-end;
+                    "
+                  >
+                    <img
+                      alt="Ministerio de Salud"
+                      src="icons/logo.svg"
+                      style="
+                        width: 100px;
+                        height: 46px;
+                        border-right: 1px solid #b0cde1;
+                        padding-right: 12px;
+                      "
+                    />
+                    <img
+                      alt="Costa Rica"
+                      src="icons/cr.svg"
+                      style="width: 47px; height: 27px; margin-left: 12px"
+                    />
+                  </div>
+                </div>
+                <div class="body-div">
+                  <div class="primary-data">
+                    <div class="pi-div">
+                      <div
+                        style="
+                          display: flex;
+                          flex-direction: row;
+                          border-bottom: 1px solid #b0cde1;
+                          align-items: center;
+                        "
+                      >
+                        <img
+                          alt="icon"
+                          src="icons/profile.svg"
+                          class="pi-image"
+                        />
+                        <p
+                          style="
+                            font-size: 12px;
+                            font-weight: bold;
+                            color: #083044;
+                            margin-left: 0px;
+                          "
+                        >
+                          PERSONAL INFORMATION<br />DATOS PERSONALES
+                        </p>
+                      </div>
+                      <p
+                        style="
+                          font-size: 12px;
+                          color: #686869;
+                          margin-bottom: 5px;
+                        "
+                      >
+                        Full name / Nombre completo
+                      </p>
+                      <p
+                        style="
+                          font-size: 12px;
+                          font-weight: bold;
+                          margin: 0px;
+                          margin-bottom: 5px;
+                        "
+                      >
+                        JOSE MARIO ARAYA RODRIGUEZ
+                      </p>
+                      <p
+                        style="
+                          font-size: 12px;
+                          color: #686869;
+                          margin-bottom: 5px;
+                        "
+                      >
+                        Birthdate / Fecha de nacimiento:
+                      </p>
+                      <p
+                        style="
+                          font-size: 12px;
+                          font-weight: bold;
+                          margin: 0px;
+                          margin-bottom: 5px;
+                        "
+                      >
+                        06/05/1987
+                      </p>
+                    </div>
+                    <div class="qr-div">
+                      <p class="text">Status/Estado:</p>
+                      <p class="complete">COMPLETE/COMPLETO</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="
+              MuiGrid-root
+              MuiGrid-container
+              MuiGrid-direction-xs-column
+              MuiGrid-align-items-xs-center
+              MuiGrid-justify-xs-center
+            "
+          >
+            <div class="jss15"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      !(function (e) {
+        function r(r) {
+          for (
+            var n, i, a = r[0], c = r[1], l = r[2], s = 0, p = [];
+            s < a.length;
+            s++
+          )
+            (i = a[s]),
+              Object.prototype.hasOwnProperty.call(o, i) &&
+                o[i] &&
+                p.push(o[i][0]),
+              (o[i] = 0);
+          for (n in c)
+            Object.prototype.hasOwnProperty.call(c, n) && (e[n] = c[n]);
+          for (f && f(r); p.length; ) p.shift()();
+          return u.push.apply(u, l || []), t();
+        }
+        function t() {
+          for (var e, r = 0; r < u.length; r++) {
+            for (var t = u[r], n = !0, a = 1; a < t.length; a++) {
+              var c = t[a];
+              0 !== o[c] && (n = !1);
+            }
+            n && (u.splice(r--, 1), (e = i((i.s = t[0]))));
+          }
+          return e;
+        }
+        var n = {},
+          o = { 1: 0 },
+          u = [];
+        function i(r) {
+          if (n[r]) return n[r].exports;
+          var t = (n[r] = { i: r, l: !1, exports: {} });
+          return e[r].call(t.exports, t, t.exports, i), (t.l = !0), t.exports;
+        }
+        (i.e = function (e) {
+          var r = [],
+            t = o[e];
+          if (0 !== t)
+            if (t) r.push(t[2]);
+            else {
+              var n = new Promise(function (r, n) {
+                t = o[e] = [r, n];
+              });
+              r.push((t[2] = n));
+              var u,
+                a = document.createElement("script");
+              (a.charset = "utf-8"),
+                (a.timeout = 120),
+                i.nc && a.setAttribute("nonce", i.nc),
+                (a.src = (function (e) {
+                  return (
+                    i.p +
+                    "static/js/" +
+                    ({}[e] || e) +
+                    "." +
+                    { 3: "6e2481c3", 4: "a938d7f3" }[e] +
+                    ".chunk.js"
+                  );
+                })(e));
+              var c = new Error();
+              u = function (r) {
+                (a.onerror = a.onload = null), clearTimeout(l);
+                var t = o[e];
+                if (0 !== t) {
+                  if (t) {
+                    var n = r && ("load" === r.type ? "missing" : r.type),
+                      u = r && r.target && r.target.src;
+                    (c.message =
+                      "Loading chunk " +
+                      e +
+                      " failed.\n(" +
+                      n +
+                      ": " +
+                      u +
+                      ")"),
+                      (c.name = "ChunkLoadError"),
+                      (c.type = n),
+                      (c.request = u),
+                      t[1](c);
+                  }
+                  o[e] = void 0;
+                }
+              };
+              var l = setTimeout(function () {
+                u({ type: "timeout", target: a });
+              }, 12e4);
+              (a.onerror = a.onload = u), document.head.appendChild(a);
+            }
+          return Promise.all(r);
+        }),
+          (i.m = e),
+          (i.c = n),
+          (i.d = function (e, r, t) {
+            i.o(e, r) ||
+              Object.defineProperty(e, r, { enumerable: !0, get: t });
+          }),
+          (i.r = function (e) {
+            "undefined" != typeof Symbol &&
+              Symbol.toStringTag &&
+              Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
+              Object.defineProperty(e, "__esModule", { value: !0 });
+          }),
+          (i.t = function (e, r) {
+            if ((1 & r && (e = i(e)), 8 & r)) return e;
+            if (4 & r && "object" == typeof e && e && e.__esModule) return e;
+            var t = Object.create(null);
+            if (
+              (i.r(t),
+              Object.defineProperty(t, "default", { enumerable: !0, value: e }),
+              2 & r && "string" != typeof e)
+            )
+              for (var n in e)
+                i.d(
+                  t,
+                  n,
+                  function (r) {
+                    return e[r];
+                  }.bind(null, n)
+                );
+            return t;
+          }),
+          (i.n = function (e) {
+            var r =
+              e && e.__esModule
+                ? function () {
+                    return e.default;
+                  }
+                : function () {
+                    return e;
+                  };
+            return i.d(r, "a", r), r;
+          }),
+          (i.o = function (e, r) {
+            return Object.prototype.hasOwnProperty.call(e, r);
+          }),
+          (i.p = "/"),
+          (i.oe = function (e) {
+            throw (console.error(e), e);
+          });
+        var a = (this["webpackJsonp@covid/vaccine-web"] =
+            this["webpackJsonp@covid/vaccine-web"] || []),
+          c = a.push.bind(a);
+        (a.push = r), (a = a.slice());
+        for (var l = 0; l < a.length; l++) r(a[l]);
+        var f = c;
+        t();
+      })([]);
+    </script>
+
+
+  </body>
+</html>
